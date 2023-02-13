@@ -7,7 +7,7 @@ import MicIcon from '@mui/icons-material/Mic';
 import EmojiEmotionsIcon from '@mui/icons-material/EmojiEmotions';
 import "./css/Chat.css";
 import { useParams } from "react-router-dom";
-import {collection, doc,addDoc, onSnapshot, serverTimestamp, query, orderBy } from "firebase/firestore";
+import {collection, doc,addDoc, onSnapshot, serverTimestamp, query, orderBy, Timestamp } from "firebase/firestore";
 import { db } from "./FirebaseSeting";
 
 
@@ -30,7 +30,7 @@ function Chat({userName}) {
         setRoomName(doc.data().name);
       });
       const q = query(collection(db,"contactsChat",roomId,"messages")
-      ,orderBy("timeStamp","asc"));
+      ,orderBy("timestamp","asc"));
 
       const getMessage = onSnapshot(q,(snapshot)=>{
         let msgList = [];
@@ -58,7 +58,7 @@ function Chat({userName}) {
       ,{
         message: input,
         name:userName,
-        timeStamp:serverTimestamp()
+        timestamp:serverTimestamp()
       }
       );
       
@@ -77,7 +77,7 @@ function Chat({userName}) {
         <Avatar />
         <div className="chat__headerInfo">
           <h3>{roomName}</h3>
-          <p>Last seen at {" "} {new Date(messages[messages.length-1]?.timeStamp?.toDate()).toUTCString()}</p>
+          <p>Last seen at {" "} {new Date(messages[messages.length-1]?.timestamp?.toDate()).toUTCString()}</p>
         </div>
 
         <div className="header__right">
@@ -103,7 +103,7 @@ function Chat({userName}) {
           <span className="chat__name">{message.name}</span>
         {message.message}
           <span className="chat__time">
-            {new Date(message.timeStamp?.toDate()).toUTCString()}
+            {new Date(message.timestamp?.toDate()).toUTCString()}
           </span>
         </p>
           ))
