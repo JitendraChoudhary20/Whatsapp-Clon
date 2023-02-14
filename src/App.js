@@ -28,12 +28,15 @@ const [userName, setUserName] = useState("");
       ):(
         <div className="app__body">
             <Sidebar userName={userName}/>
-          <Routes>
-            
+
+          <Routes> 
+          
+
             <Route path="/" element={<Chat userName={userName}/>}></Route>
+          
             <Route path="room/:roomId" element={<Chat userName={userName}/>} />
            
-          
+           
           </Routes>
         
         </div>

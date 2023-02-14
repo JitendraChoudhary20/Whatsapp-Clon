@@ -7,6 +7,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import { LoginContext } from "./LoginContext";
 import { auth } from "./FirebaseSeting";
 import { IconButton } from "@mui/material";
+import { Link } from "react-router-dom";
 
 export default function Login() {
   const { setUserLogin, setUserName } = useContext(LoginContext);
@@ -58,6 +59,10 @@ export default function Login() {
         <button id="submit-btn" onClick={signIn}>
           Sign In
         </button>
+        <p>Don't have an account ?</p>
+        <Link to="/">
+          <span>Sign up</span>
+        </Link>
       </div>
     </div>
   );

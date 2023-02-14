@@ -1,5 +1,5 @@
 import { Avatar, IconButton } from "@mui/material";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import DonutLargeIcon from "@mui/icons-material/DonutLarge";
 import ChatIcon from "@mui/icons-material/Chat";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
@@ -8,10 +8,18 @@ import "./css/Sidebar.css";
 import SidebarChat from "./SidebarChat.js";
 import { db } from "./FirebaseSeting.js";
 import { getDocs, collection, onSnapshot } from "@firebase/firestore";
+import { useNavigate } from "react-router-dom";
+import { LoginContext } from "./LoginContext";
+
 
 function Sidebar({userName}) {
   
-
+  const { setUserLogin} = useContext(LoginContext);
+const Navigate = useNavigate();
+  const signOut=()=>{
+  Navigate("/login")
+  setUserLogin(false);
+  }
   const [room, setRoom] = useState([]);
   const [seed, setSeed] = useState("");
 
@@ -47,6 +55,7 @@ useEffect(()=>{
       <div className="sidebar__header">
       <Avatar src={`https://avatars.dicebear.com/api/human/${seed}.svg`}/>
         <h3>{userName}</h3>
+        <button onClick={signOut}>Sign Out</button>
         {/* avatars "src" is used for using diffrent diffrent avatars */}
         <div className="sidebar__headerRight">
           {/* //to get hover effect IconButton is used // */}
