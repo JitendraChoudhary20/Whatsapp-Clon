@@ -122,6 +122,8 @@ function Chat({userName}) {
 <form onSubmit={(e)=>{sendMessage(e)}}>
   <input type="text" value={input} placeholder="type your message " onChange={(e)=>setInput(e.target.value)}/>
   <input type="submit" />
+
+
 </form>
         <IconButton>
         <MicIcon/>
