@@ -8,6 +8,7 @@
     align-items: center;
     border-bottom: 1px solid lightgrey;
     padding: 10px;
+    background-color: purple;
 
 }
 .chat__headerInfo{
@@ -77,8 +78,23 @@ font-size: 16px;
     border: 0;
     height: 40px;
     outline: 0;
-    width: 100%;
+    width: 90%;
+
 }
 .chat__footer form input[type='submit'] {
-    display: none;
+    border: 2;
+    height: 40px;
+    outline: 0;
+    width: 50px;
+    font-weight: bold;
+    padding: 5px;
+    font-size: medium;
+    text-align: center;
+    justify-content: center;
+    background-color: grey;
+
+}
+.input{
+    display: flex;
+   
 }

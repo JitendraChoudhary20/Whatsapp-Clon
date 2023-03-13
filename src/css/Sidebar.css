@@ -7,7 +7,7 @@
     justify-content: space-between;
     border-right: 1px solid lightgrey;
     padding: 10px;
-    background-color: #ededed;
+    background-color: rgb(223, 85, 223);
      
 }
 .sidebar__headerRight{
@@ -82,4 +82,11 @@ a{
     color: black;       
     /* this will make hyperlink to normal, This contents from Link tag
     but in react link tag means 'anchor' tag */
+}
+.btn-signOut{
+    background-color: red;
+}
+.btn-signOut:hover{
+    background-color: transparent;
+    color: red;
 }

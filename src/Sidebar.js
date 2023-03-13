@@ -56,7 +56,7 @@ useEffect(()=>{
       <div className="sidebar__header">
       <Avatar src={`https://avatars.dicebear.com/api/human/${seed}.svg`}/>
         <h3>{userName}</h3>
-        <button onClick={signOut}>Sign Out</button>
+        <button className="btn-signOut" onClick={signOut}>Sign Out</button>
         {/* avatars "src" is used for using diffrent diffrent avatars */}
         <div className="sidebar__headerRight">
           {/* //to get hover effect IconButton is used // */}
