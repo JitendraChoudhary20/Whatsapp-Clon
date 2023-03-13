@@ -120,10 +120,10 @@ function Chat({userName}) {
         <AttachFileIcon/>
         </IconButton>
 <form onSubmit={(e)=>{sendMessage(e)}}>
+  <div className="input">
   <input type="text" value={input} placeholder="type your message " onChange={(e)=>setInput(e.target.value)}/>
-  <input type="submit" />
-
-
+  <input type="submit" value="send" />
+  </div>
 </form>
         <IconButton>
         <MicIcon/>
