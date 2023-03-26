@@ -100,7 +100,26 @@ a {
    margin-bottom: 10px;
   }
   
-  
+  @media screen and (max-width: 600px) {
+    .register_login{
+        height: 260px;
+        width: 280px;
+        /* background-color: rgb(235, 51, 220); */
+    }
+    .login-container{
+        height: 260px;
+        width: 280px;
+        /* background-color: yellowgreen; */
+    }
+    .form {
+        width: 260px;
+    }
+    h1{
+        font-size: 18px;
+        color: rgb(251, 251, 253);
+    }
+
+  }
 
 /* Below CSS For Login With Google */
 /* .loginWithGoogle{

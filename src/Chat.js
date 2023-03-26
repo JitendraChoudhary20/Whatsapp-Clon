@@ -9,7 +9,7 @@ import "./css/Chat.css";
 import { useParams } from "react-router-dom";
 import {collection, doc,addDoc, onSnapshot, serverTimestamp, query, orderBy} from "firebase/firestore";
 import { db } from "./FirebaseSeting";
-
+import SendIcon from '@mui/icons-material/Send';
 
 function Chat({userName}) {
   
@@ -112,6 +112,7 @@ function Chat({userName}) {
       </div>
       
       <div className="chat__footer">
+        <div className="chat__iconbutton">
         <IconButton>
         <EmojiEmotionsIcon/>
         </IconButton>
@@ -119,15 +120,22 @@ function Chat({userName}) {
         <IconButton>
         <AttachFileIcon/>
         </IconButton>
+        </div>
+
+        
 <form onSubmit={(e)=>{sendMessage(e)}}>
   <div className="input">
   <input type="text" value={input} placeholder="type your message " onChange={(e)=>setInput(e.target.value)}/>
-  <input type="submit" value="send" />
+  <input className="sendmsg" type="submit" value="Send" />
+  
   </div>
 </form>
+<div className="chat__iconbutton">
         <IconButton>
         <MicIcon/>
         </IconButton>
+</div>
+       
       </div>
     </div>
   );

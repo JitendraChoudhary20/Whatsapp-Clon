@@ -7,7 +7,7 @@
     justify-content: space-between;
     border-right: 1px solid lightgrey;
     padding: 10px;
-    background-color: rgb(223, 85, 223);
+    background-color: rgb(128,0,128,0.9);
      
 }
 .sidebar__headerRight{
@@ -46,12 +46,14 @@
     display: flex;
     background-color: #fff;
     flex-direction: column;
+    
 }
 .sidebar__chat{
     display: flex;
     align-items: center;
     border-bottom: 1px solid #eaeaea;
-    padding: 10px;    
+    padding: 10px;
+    
 }
 .sidebar__chat:hover{
     cursor: pointer;
@@ -89,4 +91,43 @@ a{
 .btn-signOut:hover{
     background-color: transparent;
     color: red;
+}
+
+@media screen and (max-width: 600px){
+    .sidebar__header .MuiAvatar-circular{
+        height: 18px;
+        width: 18px;
+    }
+    .sidebar__header h3{
+        font-size: 14px;
+    }
+    
+    .sidebar__headerRight{
+        display: none;
+    }
+    .sidebar__chat .MuiAvatar-circular{
+        /* sidebar__chat icons size setting 
+        .MuiAvatar-circular->Avatar classes*/
+        height: 15px;
+        width: 15px;
+    }
+    .sidebar__chat h2{
+        font-size: 14px;
+        margin-left: 5px;
+       
+    }
+    .sidebar__chatInfo{
+        margin-left: 5px;
+    }   
+    .sidebar__chatInfo h2{
+        font-size: 14px;
+    }
+    .sidebar__chatInfo p{
+        font-size: 10px;
+    }
+    .btn-signOut{
+        background-color: rgb(9, 7, 7);
+        color: white;
+        font-size: 12px
+    }
 }
